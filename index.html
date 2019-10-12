@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<script href="open.js"></script>
+<body>
+
+<input id="filename" placeholder="Filename">
+<button id="new" type="button">New</button>
+<input id="load" type="file">Load</button>
+<button id="save" type="button">Save</button>
+<button id="saveAs" type="button">Save as...</button>
+<textarea id="main" rows="4" cols="50" style="display: block"></textarea>
+
+</body>
+<script>
+
+var openFile = function(event) {
+    var input = event.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+        var text = reader.result;
+        var node = document.getElementById('output');
+        node.innerText = text;
+        console.log(reader.result.substring(0, 200));
+    };
+    reader.readAsText(input.files[0]);
+};
+
+var filenameBox = document.getElementById("filename");
+var newB = document.getElementById("new");
+var loadB = document.getElementById("load");
+var saveB = document.getElementById("save");
+var saveAsB = document.getElementById("saveAs");
+var contentBox = document.getElementById("main");
+
+if (!newB) {
+    console.log("No new button");
+}
+if (!loadB) {
+    console.log("No load button")
+}
+
+function filename() {
+    return filenameBox.value
+}
+
+newB.addEventListener("click", function() {
+    console.log("new pressed")
+})
+
+// loadB.addEventListener("click", function() {
+//     console.log("load clicked")
+//     contentBox.innerText = fetch(filename()).text()
+// })
+
+</script>
+</html>
