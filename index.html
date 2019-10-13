@@ -3,19 +3,37 @@
 <head>
 <title>CloudTextEditor</title>
 <style>
+    html,
+    body {
+        height: 100%;
+    }
     #editor {
         width: 100%;
+        box-sizing: border-box;
+    }
+    header {
+        height: 100%
+        width: 100%;
+    }
+    div {
+        width: 100%;
+        height: 100%;
+        display: flex;
     }
 </style>
 </head>
 <script href="open.js"></script>
 <body>
-    <input id="filename" placeholder="Filename">
-    <button id="new" type="button">New</button>
-    <input id="load" type="file">Load</button>
-    <button id="save" type="button">Save</button>
-    <button id="saveAs" type="button">Save as...</button>
-    <textarea id="editor" rows="4" cols="50"></textarea>
+    <header>
+        <input id="filename" placeholder="Filename">
+        <button id="new" type="button">New</button>
+        <input id="load" type="file">Load</button>
+        <button id="save" type="button">Save</button>
+        <button id="saveAs" type="button">Save as...</button>
+    </header>
+    <div>
+        <textarea id="editor" rows="4" cols="50"></textarea>
+    </div>
 </body>
 <script>
     // Document elements
