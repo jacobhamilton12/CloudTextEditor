@@ -1,65 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+<title>CloudTextEditor</title>
+<style>
+    #editor {
+        width: 100%;
+    }
+</style>
+</head>
 <script href="open.js"></script>
 <body>
-
-<input id="filename" placeholder="Filename">
-<button id="new" type="button">New</button>
-<input id="load" type="file">Load</button>
-<button id="save" type="button">Save</button>
-<button id="saveAs" type="button">Save as...</button>
-<textarea id="main" rows="4" cols="50" style="display: block"></textarea>
-
+    <input id="filename" placeholder="Filename">
+    <button id="new" type="button">New</button>
+    <input id="load" type="file">Load</button>
+    <button id="save" type="button">Save</button>
+    <button id="saveAs" type="button">Save as...</button>
+    <textarea id="editor" rows="4" cols="50"></textarea>
 </body>
 <script>
+    // Document elements
+    var filenameBox = document.getElementById("filename")
+    var newB = document.getElementById("new")
+    var loadB = document.getElementById("load")
+    var saveB = document.getElementById("save")
+    var saveAsB = document.getElementById("saveAs")
+    var contentBox = document.getElementById("main")
+    var currFile = File
 
-var openFile = function(event) {
-    var input = event.target
+    // Look an arrow function!
+    var filename = () => filenameBox.value;
 
-    var reader = new FileReader()
-    reader.onload = function(){
-        var text = reader.result
-        var node = document.getElementById('output')
-        node.innerText = text
-        console.log(reader.result.substring(0, 200))
-    }
-    reader.readAsText(input.files[0])
-}
-
-var filenameBox = document.getElementById("filename")
-var newB = document.getElementById("new")
-var loadB = document.getElementById("load")
-var saveB = document.getElementById("save")
-var saveAsB = document.getElementById("saveAs")
-var contentBox = document.getElementById("main")
-var currFile = File
-
-if (!newB) {
-    console.log("No new button")
-}
-if (!loadB) {
-    console.log("No load button")
-}
-
-function filename() {
-    return filenameBox.value
-}
-
-newB.addEventListener("click", function() {
-    console.log("new pressed")
-})
-
-loadB.addEventListener("input", function() {
-    currFile = loadB.files[0]
-    var fr = new FileReader()
-    fr.onload = function(e) {
-        // e.target.result should contain the text
-        contentBox.value = e.target.result
-    }
-    fr.readAsText(currFile)
-    console.log("loaded file")
-})
-
+    loadB.addEventListener("input", function() {
+        currFile = loadB.files[0]
+        var fr = new FileReader()
+        fr.onload = function(e) {
+            // e.target.result should contain the text
+            contentBox.value = e.target.result
+        }
+        fr.readAsText(currFile)
+        console.log("loaded file")
+    })
 </script>
 </html>
