@@ -26,3 +26,12 @@ If the function is particularly short:
 ```javascript
 var helloString = () => "hello"
 ```
+
+If you are using arrow functions, keep in mind that they [don't behave exactly the same way](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) as normal functions.
+
+For other style considerations, use your best judgements and try to stick to the same style as the rest of the code.
+
+Some useful links:
+
+- [Markdown Cheatsheet (For READMEs on Github)](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [Javascript fundamentals](https://javascript.info/first-steps)
