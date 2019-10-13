@@ -9,7 +9,7 @@ Indentation should consist of four spaces (not tabs). If you don't know how to c
 
 Lines should not exceed 80 characters.
 
-Semicolons should be avoided except where necessary.
+Semicolons should be avoided [except where necessary.](http://inimino.org/~inimino/blog/javascript_semicolons)
 
 The following syntax should be used to define functions and anonymous functions respectively:
 
@@ -36,3 +36,4 @@ For other style considerations, use your best judgements and try to stick to the
 - [Markdown Cheatsheet (For READMEs on Github)](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 - [Javascript fundamentals](https://javascript.info/first-steps)
 - [Arrow functions](https://zendev.com/2018/10/01/javascript-arrow-functions-how-why-when.html)
+- [When are semicolons unnecessary?](http://inimino.org/~inimino/blog/javascript_semicolons)
