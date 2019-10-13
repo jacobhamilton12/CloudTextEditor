@@ -15,27 +15,28 @@
 <script>
 
 var openFile = function(event) {
-    var input = event.target;
+    var input = event.target
 
-    var reader = new FileReader();
+    var reader = new FileReader()
     reader.onload = function(){
-        var text = reader.result;
-        var node = document.getElementById('output');
-        node.innerText = text;
-        console.log(reader.result.substring(0, 200));
-    };
-    reader.readAsText(input.files[0]);
-};
+        var text = reader.result
+        var node = document.getElementById('output')
+        node.innerText = text
+        console.log(reader.result.substring(0, 200))
+    }
+    reader.readAsText(input.files[0])
+}
 
-var filenameBox = document.getElementById("filename");
-var newB = document.getElementById("new");
-var loadB = document.getElementById("load");
-var saveB = document.getElementById("save");
-var saveAsB = document.getElementById("saveAs");
-var contentBox = document.getElementById("main");
+var filenameBox = document.getElementById("filename")
+var newB = document.getElementById("new")
+var loadB = document.getElementById("load")
+var saveB = document.getElementById("save")
+var saveAsB = document.getElementById("saveAs")
+var contentBox = document.getElementById("main")
+var currFile = File
 
 if (!newB) {
-    console.log("No new button");
+    console.log("No new button")
 }
 if (!loadB) {
     console.log("No load button")
@@ -50,13 +51,15 @@ newB.addEventListener("click", function() {
 })
 
 loadB.addEventListener("input", function() {
+    currFile = loadB.files[0]
+    var fr = new FileReader()
+    fr.onload = function(e) {
+        // e.target.result should contain the text
+        contentBox.value = e.target.result
+    }
+    fr.readAsText(currFile)
     console.log("loaded file")
 })
-
-// loadB.addEventListener("click", function() {
-//     console.log("load clicked")
-//     contentBox.innerText = fetch(filename()).text()
-// })
 
 </script>
 </html>
