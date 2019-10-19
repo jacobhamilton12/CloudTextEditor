@@ -11,3 +11,9 @@ div {
     height: 100%;
     display: flex;
 }
+span {
+  content: "\2605";
+}
+.hide {
+    display: none;
+}

@@ -5,6 +5,9 @@ var loadB = document.getElementById("load")
 var saveB = document.getElementById("save")
 var saveAsB = document.getElementById("saveAs")
 var contentBox = document.getElementById("editor")
+var star1 = document.getElementById("star1")
+var star2 = document.getElementById("star2")
+var editor = document.getElementById("editor")
 var currFile = File
 
 // Look an arrow function!
@@ -19,4 +22,10 @@ loadB.addEventListener("input", function() {
     }
     fr.readAsText(currFile)
     console.log("loaded file")
+})
+
+editor.addEventListener('keypress', function(){
+    console.log("star")
+    star1.classList.remove('hide')
+    star2.classList.remove('hide')
 })
