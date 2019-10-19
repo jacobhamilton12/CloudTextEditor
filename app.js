@@ -25,7 +25,16 @@ loadB.addEventListener("input", function() {
 })
 
 editor.addEventListener('keypress', function(){
-    console.log("star")
     star1.classList.remove('hide')
     star2.classList.remove('hide')
+})
+
+saveB.addEventListener('click', function(){
+    star1.classList.add('hide')
+    star2.classList.add('hide')
+})
+
+saveAsB.addEventListener('click', function(){
+    star1.classList.add('hide')
+    star2.classList.add('hide')
 })
